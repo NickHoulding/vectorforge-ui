@@ -4,13 +4,15 @@ import { StatsPage } from "./pages/StatsPage";
 
 export function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Navigate to="/collections" />} />
+    <div className="bg-space-indigo-950">
+      <main className="max-w-6xl h-screen mx-auto px-6 py-8">
+        <Routes>
+          <Route path="/" element={<Navigate to="/collections" />} />
 
-        <Route path="/collections" element={<CollectionsPage />}></Route>
-        <Route path="/stats" element={<StatsPage />} />
-      </Routes>
+          <Route path="/collections" element={<CollectionsPage />}></Route>
+          <Route path="/stats" element={<StatsPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }

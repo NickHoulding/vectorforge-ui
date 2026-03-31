@@ -11,9 +11,9 @@ export function CollectionsPage() {
   }, []);
 
   return (
-    <div className="bg-space-indigo-800 grid grid-cols-3 gap-4">
-      {collections.map(collection => (
-        <CollectionCard key={collection.collection_name} />
+    <div className="w-screen, h-min grid grid-cols-2 gap-6">
+      {collections.map((collection) => (
+        <CollectionCard key={collection.collection_name} {...collection} />
       ))}
     </div>
   );
