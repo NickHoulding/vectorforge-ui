@@ -1,6 +1,7 @@
 import { CollectionsPage } from "./pages/CollectionsPage";
 import { Navigate, Routes, Route } from "react-router";
 import { StatsPage } from "./pages/StatsPage";
+import { CollectionDetailsPage } from "./pages/CollectionsDetailPage";
 
 export function App() {
   return (
@@ -10,6 +11,10 @@ export function App() {
           <Route path="/" element={<Navigate to="/collections" />} />
 
           <Route path="/collections" element={<CollectionsPage />}></Route>
+          <Route
+            path="/collections/:id"
+            element={<CollectionDetailsPage />}
+          ></Route>
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </main>
