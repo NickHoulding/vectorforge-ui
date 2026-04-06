@@ -12,7 +12,7 @@ export function App() {
 
           <Route path="/collections" element={<CollectionsPage />}></Route>
           <Route
-            path="/collections/:id"
+            path="/collections/:collection_name"
             element={<CollectionDetailsPage />}
           ></Route>
           <Route path="/stats" element={<StatsPage />} />

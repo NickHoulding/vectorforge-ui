@@ -5,3 +5,9 @@ export interface Collection {
   document_count: number;
   metadata?: Record<string, unknown>;
 }
+
+export interface Document {
+  id: string;
+  content: string;
+  metadata: string;
+}
