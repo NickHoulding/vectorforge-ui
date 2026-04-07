@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getDocuments } from "@/api/vectorforge";
+import { getDocuments, requestDocumentDeletion } from "@/api/vectorforge";
 import type { Document } from "@/types";
 import { DocumentCard } from "@/components/DocumentCard";
 
@@ -12,14 +12,28 @@ export function CollectionDetailsPage() {
     if (collection_name) getDocuments(collection_name).then(setDocuments);
   }, [collection_name]);
 
+  async function deleteDocument(collection_name: string, doc_id: string) {
+    const result = await requestDocumentDeletion(collection_name, doc_id);
+    if (result) {
+      setDocuments((prev) => prev.filter((doc) => doc.id !== doc_id));
+    }
+  }
+
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-lavender-200 font-bold text-2xl mb-1">
+    <div>
+      <h1 className="text-lavender-200 font-bold text-2xl mb-6">
         {collection_name} documents
       </h1>
-      {documents.map((document) => (
-        <DocumentCard key={document.id} {...document} />
-      ))}
+      <div className="flex flex-col">
+        {documents.map((document) => (
+          <DocumentCard
+            key={document.id}
+            {...document}
+            collectionName={collection_name!}
+            deleteFunc={deleteDocument}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -11,3 +11,8 @@ export interface Document {
   content: string;
   metadata: string;
 }
+
+export interface DocumentCardProps extends Document {
+  collectionName: string;
+  deleteFunc: (collection_name: string, doc_id: string) => void;
+}
