@@ -16,3 +16,8 @@ export interface DocumentCardProps extends Document {
   collectionName: string;
   deleteFunc: (collection_name: string, doc_id: string) => void;
 }
+
+export interface NavbarEntryProps {
+  text: string;
+  to: string;
+}

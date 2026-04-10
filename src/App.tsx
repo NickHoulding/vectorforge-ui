@@ -18,6 +18,8 @@ export function App() {
             element={<CollectionDetailsPage />}
           ></Route>
           <Route path="/stats" element={<StatsPage />} />
+          <Route path="/search" element={<StatsPage />} />
+          <Route path="/embeddings" element={<StatsPage />} />
         </Routes>
       </main>
     </div>

@@ -21,7 +21,7 @@ export function CollectionDetailsPage() {
 
   return (
     <div>
-      <h1 className="text-lavender-200 font-bold text-2xl mb-6">
+      <h1 className="text-lavender-200 font-bold text-xl mb-6">
         {collection_name} documents
       </h1>
       <div className="flex flex-col">
